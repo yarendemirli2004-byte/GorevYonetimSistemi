@@ -1,4 +1,5 @@
 package model;
+
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -24,11 +25,21 @@ public class Kullanici {
 	        this.projeler = new ArrayList<>();
 	    }
 /**
+ * Projenin benzersiz kimliğini döndürür.
+ * @return proje kimliği
+ */
+	    public int getId() {
+        	return id;
+        }
+        public String getEmail() {
+        	return email;	
+        }
+/**
  * Kullanıcıya proje ekler.
  *
  * @param p eklenecek proje
  */
-
+       
 	    public void projeEkle(Proje p) {
 	        projeler.add(p);
 	    }

@@ -3,7 +3,6 @@ import model.Gorev;
 import model.Proje;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
 /**
  * Proje sınıfında görev ekleme iş mantığını test eder.
  */

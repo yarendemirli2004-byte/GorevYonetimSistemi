@@ -1,46 +1,50 @@
 package test;
-import model.SonTeslimTarihi;
+
 import model.ZamanlıGorev;
+import model.SonTeslimTarihi;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 import java.time.LocalDateTime;
 
-/**
- * Zamanlı görevlerin son tarih mantığını test eder.
- */
 public class ZamanlıGorevTest {
 
+    /* Zamanlı görev nesnesi oluşturulabiliyor mu? */
     @Test
-    public void isOverdue_gecmisTarihIcin_true_donmeli() {
-        LocalDateTime gecmis = LocalDateTime.now().minusDays(1);
-        SonTeslimTarihi st = new SonTeslimTarihi(gecmis, 1);
+    public void zamanliGorev_olusturulabiliyor_mu() {
+        SonTeslimTarihi sonTeslim =
+                new SonTeslimTarihi(LocalDateTime.now().plusDays(1), 1);
 
-        ZamanlıGorev gorev = new ZamanlıGorev(
-                1,
-                "Geçmiş Görev",
-                "Dün bitmeliydi",
-                3,
-                st
-        );
+        ZamanlıGorev gorev =
+                new ZamanlıGorev(1, "Zamanli Gorev", "Test aciklama", 2, sonTeslim);
 
-        assertTrue(gorev.isOverdue());
+        assertNotNull(gorev);
+        assertNotNull(gorev.getSonTeslimTarihi());
+        assertEquals(1, gorev.getSonTeslimTarihi().getHatirlatmaGunOnce());
     }
 
+    /* Son teslim tarihi gelecekteyse isOverdue FALSE olmalı */
     @Test
-    public void isOverdue_gelecekTarihIcin_false_donmeli() {
-        LocalDateTime gelecek = LocalDateTime.now().plusDays(2);
-        SonTeslimTarihi st = new SonTeslimTarihi(gelecek, 1);
+    public void isOverdue_sonTarihGelecekteyse_false() {
+        SonTeslimTarihi sonTeslim =
+                new SonTeslimTarihi(LocalDateTime.now().plusDays(1), 1);
 
-        ZamanlıGorev gorev = new ZamanlıGorev(
-                2,
-                "Gelecek Görev",
-                "Yarın/Tomorrow",
-                4,
-                st
-        );
+        ZamanlıGorev gorev =
+                new ZamanlıGorev(2, "Baslik", "Aciklama", 1, sonTeslim);
 
         assertFalse(gorev.isOverdue());
     }
-}
 
+    /* Son teslim tarihi geçmişteyse isOverdue TRUE olmalı */
+    @Test
+    public void isOverdue_sonTarihGecmisteyse_true() {
+        SonTeslimTarihi sonTeslim =
+                new SonTeslimTarihi(LocalDateTime.now().minusDays(1), 1);
+
+        ZamanlıGorev gorev =
+                new ZamanlıGorev(3, "Baslik", "Aciklama", 1, sonTeslim);
+
+        assertTrue(gorev.isOverdue());
+    }
+}

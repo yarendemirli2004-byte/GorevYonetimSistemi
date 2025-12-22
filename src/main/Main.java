@@ -15,7 +15,7 @@ import model.ZamanlıGorev;
  * çalıştırıldığı ana sınıftır.
  */
 
-public class main {
+public class Main {
 /**
  * Programın başlangıç noktası. Örnek bir kullanıcı, proje ve
  * görevler oluşturarak sistemin temel özelliklerini gösterir.

@@ -24,6 +24,9 @@ public class Proje {
 	        this.aciklama = aciklama;
 	        this.gorevler = new ArrayList<>();
 	    }
+	    public int getId() {
+        	return id;
+        }
 /**
  * Projeye yeni bir görev ekler.
  *

@@ -30,9 +30,21 @@ public class Gorev implements Completable {
         this.parlaklik = parlaklik;
         this.tamamlandi = false;
     }
- /** {@inheritDoc} */
- @Override   
+   
 
+    public int getId() {
+	    return id;
+	}
+
+	public String getAciklama() {
+	    return aciklama;
+	}
+	
+	public void setAciklama(String aciklama) {
+	    this.aciklama = aciklama;
+	}
+
+ 
     public void complete() {
         this.tamamlandi = true;
     }
