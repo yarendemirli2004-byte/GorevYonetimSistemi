@@ -13,6 +13,9 @@ public class Bildiri {
  * @param mesaj gösterilecek bildiri mesajı
  */
     public Bildiri(String mesaj) {
+    	if(mesaj == null || mesaj.trim().isEmpty()) {
+    		throw new IllegalArgumentException("Mesaj bos olamaz");
+    	}
         this.mesaj = mesaj;
         this.tarihSaat = LocalDateTime.now();
     }
