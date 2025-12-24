@@ -34,6 +34,15 @@ public class SonTeslimTarihi {
     public void setHatirlatmaGunOnce(int hatirlatmaGunOnce) {
         this.hatirlatmaGunOnce = hatirlatmaGunOnce;
     }
+    @Override
+    public String toString() {
+        return "SonTeslimTarihi{" +
+                "tarih=" + tarih +
+                ", hatirlatmaGunOnce=" + hatirlatmaGunOnce +
+                '}';
+    }
+
 }
+
 
 
