@@ -36,6 +36,17 @@ public class Proje {
 	    public void gorevEkle(Gorev g) {
 	        gorevler.add(g);
 	    }
+/**
+ * Projeden bir görevi siler.
+ *
+ * @param g silinecek görev
+ * 
+ * @return görev silindiyse true, aksi halde false
+ */
+	    public boolean gorevSil(Gorev g) {
+	        return gorevler.remove(g);
+	    }
+	    
 
 /**
  * Projeye ait görevlerin listesini döndürür.
