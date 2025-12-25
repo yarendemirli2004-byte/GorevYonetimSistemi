@@ -40,5 +40,20 @@ public class ZamanlıGorev extends Gorev {
     public boolean isOverdue() {
         return sonTeslimTarihi.getTarih().isBefore(java.time.LocalDateTime.now());
     }
+    /**
+     * Görevin son teslim tarihine kalan gün sayısını hesaplar.
+     *
+     * @return Kalan gün sayısı, eğer son teslim tarihi yoksa -1 döner
+     */
+    public long kalanGunSayisi() {
+        if (sonTeslimTarihi == null) {
+            return -1;
+        }
+
+        return java.time.Duration.between(
+                java.time.LocalDateTime.now(),
+                sonTeslimTarihi.getTarih()
+        ).toDays();
+    }
 }
 
