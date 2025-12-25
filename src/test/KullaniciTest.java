@@ -27,5 +27,12 @@ public class KullaniciTest {
         assertEquals("Yaren", kullanici.getAd());
         assertEquals("yaren@mail.com", kullanici.getEmail());
     }
+/* Kullanıcı adı güncellenebiliyor mu? */
+    @Test
+    public void testSetAd() {
+        kullanici.setAd("YeniAd");
+        assertEquals("YeniAd", kullanici.getAd());
+    }
+
 }
 
