@@ -2,7 +2,7 @@ package model;
 import interfaces.Completable;
 /**
  * Sistemdeki temel görev yapısını temsil eder.
- * Bir görev başlık, açıklama ve parlaklık bilgisi içerir.
+ * Bir görev başlık, açıklama ve öncelik seviyesi bilgisi içerir.
  */
 
 public class Gorev implements Completable {
@@ -10,7 +10,7 @@ public class Gorev implements Completable {
     private int id;
     private String baslik;
     private String aciklama;
-    private int parlaklik;
+    private int oncelikSeviyesi;
     private boolean tamamlandi;
     
     /**
@@ -19,15 +19,15 @@ public class Gorev implements Completable {
      * @param id görevin benzersiz kimliği
      * @param baslik görev başlığı
      * @param aciklama görev açıklaması
-     * @param parlaklik görev öncelik seviyesi
+     * @param görev öncelik seviyesi
      */    
     
    
-    public Gorev(int id, String baslik, String aciklama, int parlaklik) {
+    public Gorev(int id, String baslik, String aciklama, int oncelikSeviyesi) {
         this.id = id;
         this.baslik = baslik;
         this.aciklama = aciklama;
-        this.parlaklik = parlaklik;
+        this.oncelikSeviyesi = oncelikSeviyesi;
         this.tamamlandi = false;
     }
    
@@ -63,12 +63,12 @@ public class Gorev implements Completable {
         this.baslik = baslik;
     }
 
-    public int getParlaklik() {
-        return parlaklik;
+    public int getoncelikSeviyesi() {
+        return oncelikSeviyesi;
     }
 
-    public void setParlaklik(int parlaklik) {
-        this.parlaklik = parlaklik;
+    public void setoncelikSeviyesi(int oncelikSeviyesi) {
+        this.oncelikSeviyesi = oncelikSeviyesi;
     }
 }
 
