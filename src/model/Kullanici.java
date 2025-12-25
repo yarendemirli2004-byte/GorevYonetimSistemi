@@ -55,4 +55,15 @@ public class Kullanici {
 	    public String getAd() {
 	        return ad;
 	    }
+/**
+ * Kullanıcının adını günceller.
+ *
+ * @param yeniAd yeni kullanıcı adı
+ */
+	    public void setAd(String yeniAd) {
+	        if (yeniAd != null && !yeniAd.trim().isEmpty()) {
+	            this.ad = yeniAd.trim();
+	        }
+	    }
+
 }
