@@ -16,6 +16,9 @@ public class Bildiri {
     	if(mesaj == null || mesaj.trim().isEmpty()) {
     		throw new IllegalArgumentException("Mesaj bos olamaz");
     	}
+    	if (mesaj.length() > 255) {
+            throw new IllegalArgumentException("Mesaj cok uzun");
+        }
         this.mesaj = mesaj;
         this.tarihSaat = LocalDateTime.now();
     }
