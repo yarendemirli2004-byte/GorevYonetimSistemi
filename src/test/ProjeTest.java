@@ -24,5 +24,18 @@ public class ProjeTest {
         // Bu görev de az önce eklediğimiz görev olmalı
         assertEquals(gorev, proje.getGorevler().get(0));
     }
+    @Test
+    public void birden_fazla_gorev_eklenebilmeli() {
+        Proje proje = new Proje(1, "Test Projesi", "Açıklama");
+
+        Gorev g1 = new Gorev(1, "Görev 1", "Açıklama 1", 2);
+        Gorev g2 = new Gorev(2, "Görev 2", "Açıklama 2", 4);
+
+        proje.gorevEkle(g1);
+        proje.gorevEkle(g2);
+
+        assertEquals(2, proje.getGorevler().size());
+    }
+  
 }
 
