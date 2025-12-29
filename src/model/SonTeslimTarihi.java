@@ -34,6 +34,17 @@ public class SonTeslimTarihi {
     public void setHatirlatmaGunOnce(int hatirlatmaGunOnce) {
         this.hatirlatmaGunOnce = hatirlatmaGunOnce;
     }
+ /**
+  * Hatırlatma zamanının gelip gelmediğini kontrol eder.
+  *
+  * @return true ise hatırlatma zamanı gelmiştir
+  */
+    public boolean isHatirlatmaZamani() {
+        LocalDateTime hatirlatmaZamani =
+                tarih.minusDays(hatirlatmaGunOnce);
+        return LocalDateTime.now().isAfter(hatirlatmaZamani);
+    }
+
     @Override
     public String toString() {
         return "SonTeslimTarihi{" +
