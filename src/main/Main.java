@@ -56,6 +56,16 @@ public class Main {
         // ZAMANLI GÖREVİ PROJEYE EKLEME
         proje.gorevEkle(gorev2);
         System.out.println("Zamanlı görev eklendi: " + gorev2.getBaslik());
+        
+     // ZAMANLI GÖREV HATIRLATMA KONTROLÜ
+        System.out.println("\nHatırlatma kontrolü:");
+
+        if (gorev2.getSonTeslimTarihi().isHatirlatmaZamani()) {
+            System.out.println("- " + gorev2.getBaslik() + " → Hatırlatma zamanı yaklaştı!");
+        } else {
+            System.out.println("- " + gorev2.getBaslik() + " → Henüz hatırlatma zamanı değil.");
+        }
+
 
         // 5) GÖREV TAMAMLAMA (MIN. ÖZELLİK 3)
         gorev1.complete();
