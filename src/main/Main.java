@@ -65,8 +65,13 @@ public class Main {
         } else {
             System.out.println("- " + gorev2.getBaslik() + " → Henüz hatırlatma zamanı değil.");
         }
-
-
+     // ACİL GÖREV KONTROLÜ (DEMO)
+        System.out.println("\nAcil görev kontrolü:");
+        if (gorev2.isAcil()) {
+            System.out.println("- " + gorev2.getBaslik() + " → ACİL!");
+        } else {
+            System.out.println("- " + gorev2.getBaslik() + " → Acil değil.");
+        }
         // 5) GÖREV TAMAMLAMA (MIN. ÖZELLİK 3)
         gorev1.complete();
         System.out.println("Görev TAMAMLANDI: " + gorev1.getBaslik());
