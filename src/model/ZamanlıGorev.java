@@ -55,5 +55,19 @@ public class ZamanlıGorev extends Gorev {
                 sonTeslimTarihi.getTarih()
         ).toDays();
     }
+    /**
+     * Görevin acil olup olmadığını kontrol eder.
+     * Son teslim tarihine 1 gün veya daha az kaldıysa acil kabul edilir.
+     *
+     * @return true ise görev acildir
+     */
+    public boolean isAcil() {
+        if (sonTeslimTarihi == null) {
+            return false;
+        }
+
+        long kalanGun = kalanGunSayisi();
+        return kalanGun <= 1 && kalanGun >= 0;
+    }
 }
 
