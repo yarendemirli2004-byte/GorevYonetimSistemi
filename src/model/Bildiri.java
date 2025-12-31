@@ -22,12 +22,16 @@ public class Bildiri {
         this.mesaj = mesaj;
         this.tarihSaat = LocalDateTime.now();
     }
-
+/**
+ * Bildirinin içerdiği mesaj metnini döndürür.
+ *   
+ * @return bildiri mesajı
+  */
     public String getMesaj() {
         return mesaj;
     }
 
-    public LocalDateTime getTarihSaat() {
+    public LocalDateTime getTarihSaat() { 
         return tarihSaat;
     }
 }

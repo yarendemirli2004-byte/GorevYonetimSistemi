@@ -30,25 +30,43 @@ public class Gorev implements Completable {
         this.oncelikSeviyesi = oncelikSeviyesi;
         this.tamamlandi = false;
     }
-   
+    /**
+     * Görevin benzersiz kimlik numarasını döndürür.
+     *
+     * @return görev kimliği
+     */   
 
     public int getId() {
 	    return id;
 	}
-
+    /**
+     * Göreve ait açıklama bilgisini döndürür.
+     *
+     * @return görev açıklaması
+     */
 	public String getAciklama() {
 	    return aciklama;
 	}
-	
+	/**
+	 * Görevin açıklama bilgisini günceller.
+	 *
+	 * @param aciklama yeni görev açıklaması
+	 */	
 	public void setAciklama(String aciklama) {
 	    this.aciklama = aciklama;
 	}
 
- 
+	/**
+	 * Görevi tamamlanmış olarak işaretler.
+	 */
     public void complete() {
         this.tamamlandi = true;
     }
- /** {@inheritDoc} */
+    /**
+     * Görevin tamamlanma durumunu döndürür.
+     *
+     * @return görev tamamlandıysa true, aksi halde false
+     */
  @Override
 
     public boolean isCompleted() {
@@ -61,11 +79,19 @@ public class Gorev implements Completable {
             ", oncelik=" + oncelikSeviyesi +
             ", tamamlandi=" + tamamlandi + "}";
  }
-
+ /**
+  * Görevin başlık bilgisini döndürür.
+  *
+  * @return görev başlığı
+  */
     public String getBaslik() {
         return baslik;
     }
-
+    /**
+     * Görevin başlık bilgisini günceller.
+     *
+     * @param baslik yeni görev başlığı
+     */
     public void setBaslik(String baslik) {
         this.baslik = baslik;
     }
