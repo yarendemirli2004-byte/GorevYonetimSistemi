@@ -57,7 +57,14 @@ public class Proje {
 	    public List<Gorev> getGorevler() {
 	        return gorevler;
 	    }
-
+/**
+ * Projeye ait toplam görev sayısını döndürür.
+ *
+ * @return görev sayısı
+ */
+	    public int gorevSayisi() {
+	        return gorevler.size();
+	    }
 	    public String getAd() {
 	        return ad;
 	    }
