@@ -54,6 +54,13 @@ public class Gorev implements Completable {
     public boolean isCompleted() {
         return tamamlandi;
     }
+ @Override
+ public String toString() {
+     return "Gorev{id=" + id +
+            ", baslik='" + baslik + '\'' +
+            ", oncelik=" + oncelikSeviyesi +
+            ", tamamlandi=" + tamamlandi + "}";
+ }
 
     public String getBaslik() {
         return baslik;
