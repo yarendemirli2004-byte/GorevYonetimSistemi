@@ -16,8 +16,15 @@ import model.ZamanlıGorev;
 public class Main {
 
     private static final Scanner sc = new Scanner(System.in);
+    /** Tarih/saat formatlayici: yyyy-MM-dd HH:mm */
     private static final DateTimeFormatter FMT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
+    /**
+     * Uygulama giris noktasi.
+     * Kullanici ve proje bilgilerini alir, menu dongusunu calistirir.
+     *
+     * @param args komut satiri argumanlari (kullanilmaz)
+     */
     public static void main(String[] args) {
 
         System.out.println("===== GOREV YONETIM SISTEMI =====");
@@ -85,6 +92,9 @@ public class Main {
         sc.close();
     }
 
+    /**
+     * Ana menu seceneklerini ekrana basar.
+     */
     private static void menuYaz() {
         System.out.println();
         System.out.println("----- MENU -----");
@@ -213,6 +223,12 @@ public class Main {
         System.out.println("Gorev tamamlandi.");
     }
 
+    /**
+     * Zamanli gorevleri gecikme/kalan gun acisindan kontrol eder ve gerekirse bildiri uretir.
+     *
+     * @param proje gorevlerin bulundugu proje
+     * @param bildiriler log/bildiri listesi
+     */
     private static void zamanliGorevKontrol(Proje proje, List<Bildiri> bildiriler) {
         System.out.println();
         System.out.println("[Zamanli Gorev Kontrolu]");
